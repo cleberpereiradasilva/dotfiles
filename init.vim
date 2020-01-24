@@ -91,9 +91,9 @@ au FileType go set tabstop=4
 
 """ Java
 au FileType java set expandtab
-au FileType java set shiftwidth=2
-au FileType java set softtabstop=2
-au FileType java set tabstop=2
+au FileType java set shiftwidth=4
+au FileType java set softtabstop=4
+au FileType java set tabstop=4
 
 """ Set configurations
 set laststatus=0
@@ -112,7 +112,7 @@ set nowrap
 set noerrorbells
 set novisualbell
 set number
-set relativenumber
+" set relativenumber
 set ruler
 set formatoptions=tcqron
 set softtabstop=2
@@ -131,6 +131,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+  Plug 'Yggdroot/indentLine'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'itchyny/vim-gitbranch'
@@ -170,7 +171,8 @@ let g:NERDTreeDirArrowCollapsible = '~'
 let g:NERDTreeShowHidden = 0
 let g:NERDTreeChDirMode = 2
 let g:airline_powerline_fonts = 1
-let g:airline_theme='one'
+let g:airline_theme='ayu'
+let ayucolor="mirage"
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let NERDTreeIgnore = [
     \ '\~$',
@@ -195,13 +197,17 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+let g:indentLine_color_dark = 1
+let g:indentLine_showFirstIndentLevel = 2
+let g:indentLine_setColors = 0
+let g:indentLine_char_list = ['¦']
 
 " Set configuration
 set termguicolors
 set background=dark
-
+                                     
 " Set color scheme
-colorscheme one
+colorscheme ayu
 
 " Keymaps configuration
 nnoremap <C-down> <C-W><C-J>
@@ -224,3 +230,4 @@ command TypeDefinition execute "call CocActionAsync('jumpTypeDefinition')"
 command References execute "call CocActionAsync('jumpReferences')"
 command OpenLink execute "call CocActionAsync('openLink')"
 command CodeLens execute "call CocActionAsync('codeLensAction')"
+
