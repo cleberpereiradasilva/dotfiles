@@ -28,4 +28,4 @@ cp ./Font-Awesome/webfonts/fa-brands-400.ttf ~/.local/share/fonts
 cp ./Font-Awesome/webfonts/fa-regular-400.ttf ~/.local/share/fonts
 
 cp .Xdefaults ~
-
+cp .dunstrc ~
