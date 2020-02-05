@@ -112,7 +112,7 @@ set nowrap
 set noerrorbells
 set novisualbell
 set number
-" set relativenumber
+set relativenumber
 set ruler
 set formatoptions=tcqron
 set softtabstop=2
@@ -170,10 +170,11 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '~'
 let g:NERDTreeShowHidden = 0
 let g:NERDTreeChDirMode = 2
-let g:airline_powerline_fonts = 1
-let g:airline_theme='ayu'
+
+let g:airline_theme='transparent'
 let ayucolor="mirage"
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 let NERDTreeIgnore = [
     \ '\~$',
     \ '\.pyc$',
@@ -190,13 +191,16 @@ let NERDTreeIgnore = [
     \ '\.gitignore',
     \ '\.python-version'
 \]
+
 let NERDTreeMinimalUI=1
-let g:multi_cursor_use_default_mapping=0
+
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
 let g:indentLine_color_dark = 1
 let g:indentLine_showFirstIndentLevel = 2
 let g:indentLine_setColors = 0
@@ -205,7 +209,7 @@ let g:indentLine_char_list = ['¦']
 " Set configuration
 set termguicolors
 set background=dark
-                                     
+
 " Set color scheme
 colorscheme ayu
 
@@ -217,7 +221,7 @@ nnoremap <C-left> <C-W><C-H>
 nnoremap <F2> :NERDTreeToggle<cr>
 nnoremap <buffer> <F9> :Run<cr>
 
-" Custom commands configuration
+" Custom miscellaneous commands configuration
 command JSONFormat %!python -m json.tool
 command XMLFormat :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
 
@@ -230,4 +234,10 @@ command TypeDefinition execute "call CocActionAsync('jumpTypeDefinition')"
 command References execute "call CocActionAsync('jumpReferences')"
 command OpenLink execute "call CocActionAsync('openLink')"
 command CodeLens execute "call CocActionAsync('codeLensAction')"
+
+" Run jest for current project
+command! -nargs=0 Jest :call  CocAction('runCommand', 'jest.projectTest')
+command! -nargs=0 JestCurrent :call  CocAction('runCommand', 'jest.fileTest', ['%'])
+nnoremap <leader>te :call CocAction('runCommand', 'jest.singleTest')<CR>
+command! JestInit :call CocAction('runCommand', 'jest.init')
 

@@ -1,0 +1,47 @@
+{
+  "coc.preferences.hoverTarget": "float",
+  "suggest.floatEnable": true,
+  "suggest.echodocSupport": true,
+  "suggest.maxPreviewWidth": 60,
+  "suggest.maxCompleteItemCount": 20,
+  "suggest.detailMaxLength": 10,
+  "suggest.removeDuplicateItems": true,
+  "java.import.gradle.enabled": true,
+  "java.import.maven.enabled": true,
+  "java.home": "/usr/lib/jvm/jdk1.8.0_231",
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.format.enabled": true,
+  "java.signatureHelp.enabled": true,
+  "java.autobuild.enabled": true,
+  "java.foldingRange.enabled": true,
+  "java.format.comments.enabled": true,
+  "java.jdt.ls.vmargs": "-javaagent:/home/paulo/tools/lombok.jar -Xbootclasspath/a:/home/paulo/tools/lombok.jar",
+  "jest.watch": true,
+  "jest.watchman": true,
+  "jest.terminalPosition": "bottom",
+  "jest.forceExit": true,
+  "languageserver": {
+    "ccls": {
+        "command": "ccls",
+        "filetypes": [
+            "c",
+            "cc",
+            "cpp",
+            "objc",
+            "objcpp"
+        ],
+        "rootPatterns": [
+            ".ccls",
+            "compile_commands.json",
+            ".vim/",
+            ".git/",
+            ".hg/"
+        ],
+        "initializationOptions": {
+            "cache": {
+                "directory": "/tmp/ccls"
+            }
+        }
+    }
+}
+}
