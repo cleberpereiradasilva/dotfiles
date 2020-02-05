@@ -184,3 +184,4 @@ exec_always --no-startup-id /home/paulo/.screenlayout/default.sh
 exec_always --no-startup-id dunst -config /home/paulo/.dunstrc
 exec_always --no-startup-id feh --bg-scale /home/paulo/wallpaper/2.jpg
 exec_always --no-startup-id /home/paulo/.config/polybar/launch.dash
+exec_always --no-startup-id /usr/bin/compton
