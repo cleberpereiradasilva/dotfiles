@@ -34,6 +34,7 @@ bindsym $mod+Return exec /bin/kitty
 
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+shift+w exec --no-startup-id rofi -show window
+bindsym $mod+l exec --no-startup-id gnome-screensaver-command --lock
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -45,13 +46,6 @@ bindsym $mod+Shift+q kill
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-
-
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+ccedilla focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left

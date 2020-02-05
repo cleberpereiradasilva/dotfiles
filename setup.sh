@@ -19,3 +19,13 @@ cp ./vim/transparent.vim ~/.vim/plugged/vim-airline-themes/autoload/airline/them
 
 echo "Copying wallpaper directory..."
 cp -rf ./wallpaper ~/
+
+echo "Copying font awesome..."
+git clone https://github.com/FortAwesome/Font-Awesome.git
+
+cp ./Font-Awesome/webfonts/fa-solid-900.ttf ~/.local/share/fonts
+cp ./Font-Awesome/webfonts/fa-brands-400.ttf ~/.local/share/fonts
+cp ./Font-Awesome/webfonts/fa-regular-400.ttf ~/.local/share/fonts
+
+cp .Xdefaults ~
+
