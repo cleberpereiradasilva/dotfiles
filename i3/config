@@ -33,6 +33,7 @@ floating_modifier $mod
 bindsym $mod+Return exec /bin/kitty
 
 bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+shift+w exec --no-startup-id rofi -show window
 
 # kill focused window
 bindsym $mod+Shift+q kill
