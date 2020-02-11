@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Installing dependencies os..."
+sudo apt -y install libdbus-glib-1-dev libdbus-1-dev make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
 echo "Installing i3wm configuration..."
 cp ./i3/config ~/.config/i3/
 
