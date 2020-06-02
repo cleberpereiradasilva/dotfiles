@@ -31,6 +31,8 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec /bin/kitty
+bindsym $mod+Shift+t exec /bin/kitty -o font_size=11.3
+bindsym $mod+Shift+o exec /bin/kitty -o font_size=18.9
 
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+shift+w exec --no-startup-id rofi -show window
@@ -103,7 +105,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws0 "0"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -115,7 +117,7 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+bindsym $mod+0 workspace $ws0
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -127,7 +129,7 @@ bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+0 move container to workspace $ws0
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -161,22 +163,46 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+bar {
+        status_command bumblebee-status -m nic cpu memory publicip bluetooth date time battery -p root.path=/ time.format="%H:%M" date.format="%a, %b %d %Y" -t onedark-powerline
+        position bottom
+        tray_output none
+        mode dock
+
+        height 26
+
+        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+        font pango:Agave 14
+        workspace_min_width 23
+
+        colors {
+                background #212733
+                statusline #ffffff
+
+                focused_workspace #ffffff #000000 #ffffff
+                active_workspace #222222 #000000 #222222
+                inactive_workspace #888888 #000000 #888888
+                urgent_workspace #ffffff #000000 #ffffff
+        }
+}
+
 bindsym $mod+r mode "resize"
+smart_borders on
+smart_gaps on
+gaps inner 10
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-client.focused #000000 #000000 #000000 #000000 #000000
-client.focused_inactive #000000 #000000 #000000 #000000 #000000
-client.unfocused #000000 #000000 #000000 #000000 #000000
-client.urgent #000000 #000000 #000000 #000000 #000000
-client.placeholder #000000 #000000 #000000 #000000 #000000
+client.focused #ffffff #ffffff #ffffff #ffffff #ffffff
+client.focused_inactive #666666 #666666 #666666 #666666 #666666
+client.unfocused #888888 #888888 #888888 #888888 #888888
+client.urgent #666666 #666666 #666666 #666666 #666666
+client.placeholder #666666 #666666 #666666 #666666 #666666
 
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 
 exec_always --no-startup-id xrdb -load /home/paulo/.Xdefaults
 exec_always --no-startup-id setxkbmap -model abnt2 -layout br -variant abnt2
 exec_always --no-startup-id /home/paulo/.screenlayout/default.sh
 exec_always --no-startup-id dunst -config /home/paulo/.dunstrc
 exec_always --no-startup-id feh --bg-scale /home/paulo/wallpaper/2.jpg
-exec_always --no-startup-id /home/paulo/.config/polybar/launch.dash
-exec_always --no-startup-id /usr/bin/compton
