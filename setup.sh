@@ -32,3 +32,29 @@ cp ./Font-Awesome/webfonts/fa-regular-400.ttf ~/.local/share/fonts
 
 cp .Xdefaults ~
 cp .dunstrc ~
+
+# Instalar pyenv
+
+# Instalar rbenv
+
+# Instalar gvm
+
+# Instalar nvm
+
+# Instalar sdkman
+
+# Instalar java
+
+# Instalar neovim
+sudo apt install -y neovim
+
+# Instalar docker
+sudo apt install docker.io docker-compose
+
+# Instalar vscode
+sudo snap install code
+
+# Instalar o bumblebee-status
+pip install netifaces
+pip install psutil
+pip install --user bumblebee-status
