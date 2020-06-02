@@ -1,4 +1,5 @@
 " Extensions configurations
+
 """ Bash
 au FileType sh set noexpandtab
 au FileType sh set shiftwidth=2
@@ -112,7 +113,6 @@ set nowrap
 set noerrorbells
 set novisualbell
 set number
-set relativenumber
 set ruler
 set formatoptions=tcqron
 set softtabstop=2
@@ -129,53 +129,99 @@ set shortmess=aFc
 " Plugins configurations
 call plug#begin('~/.vim/plugged')
   Plug 'sheerun/vim-polyglot'
+  Plug 'mhinz/vim-startify'
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'Yggdroot/indentLine'
   Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-  Plug 'itchyny/vim-gitbranch'
-  Plug 'itchyny/lightline.vim'
-  Plug 'mileszs/ack.vim'
-  Plug 'townk/vim-autoclose'
-  Plug 'sbdchd/vim-run'
-  Plug 'itchyny/vim-gitbranch'
+  Plug 'jiangmiao/auto-pairs'
   Plug 'airblade/vim-gitgutter'
-  Plug 'tpope/vim-fugitive'
-  Plug 'junegunn/gv.vim'
-  Plug 'rainglow/vim'
   Plug 'mattn/webapi-vim'
+  Plug 'tpope/vim-surround'
+  Plug 'juliosueiras/vim-terraform-completion'
+  Plug 'chazmcgarvey/vim-mermaid'
+  Plug 'puremourning/vimspector'
+  Plug 'sbdchd/neoformat'
+
+  " :DogeGenerate
+  Plug 'kkoomen/vim-doge'
+
+  " :TagbarToggle
+  " https://github.com/majutsushi/tagbar/wiki
+  Plug 'majutsushi/tagbar'
+
+  " :Neoformat <language>
+  " https://github.com/sbdchd/neoformat
+  Plug 'sbdchd/neoformat'
+
+  " Autocomplete
+  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+
+  " :Ack word_finded
+  Plug 'mileszs/ack.vim'
+
+  " :Run
+  " :RunKillAll
+  Plug 'sbdchd/vim-run'
+
+  " :Git
+  Plug 'tpope/vim-fugitive'
+
+  " :GV
+  " :GV! -> Current file
+  Plug 'junegunn/gv.vim'
+
+  " :Gist -p
   Plug 'mattn/gist-vim'
+
+  " Ctrl+c -> comment
+  " Ctrl+x -> uncomment
   Plug 'sudar/comments.vim'
-  Plug 'mhinz/vim-startify'
+
+  " :MarkdownPreview github
+  Plug 'MikeCoder/markdown-preview.vim'
+
+  " :Far foo bar <**/*.py> -> Replace
+  " :Fardo -> apply
   Plug 'brooth/far.vim'
+
+  " :GitMessenger
   Plug 'rhysd/git-messenger.vim'
+
+  " Java unused imports
+  " :UnusedImports " highlight all unused imports
+  " :UnusedImportsReset " clear the highlights
+  " :UnusedImportsRemove " remove all unused imports
+  Plug 'akhaku/vim-java-unused-imports'
+
+  " Themes
+  Plug 'vim-airline/vim-airline-themes'
   Plug 'ayu-theme/ayu-vim'
-  Plug 'paulo-pyc/vim-one'
 call plug#end()
 
-" Mouse configuration
+" Mouse configuration.
 if has('mouse')
     set mouse=a
 endif
 
-" Let configurations
+" Apply configurations.
 let g:indentLine_setColors = 1
 let g:indentLine_color_term = 8
+
 let g:GitGutterEnable = 1
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '~'
 let g:gitgutter_sign_removed = '-'
+let g:gitgutter_highlight_lines = 0
+let g:gitgutter_highlight_linenrs = 1
+
+let g:gist_use_password_in_gitconfig = 1
+
+" NERDTree configurations.
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '~'
 let g:NERDTreeShowHidden = 0
 let g:NERDTreeChDirMode = 2
-
-let g:airline_theme='transparent'
-let ayucolor="mirage"
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-let NERDTreeIgnore = [
+let g:NERDTreeIgnore = [
     \ '\~$',
     \ '\.pyc$',
     \ '^\.DS_Store$',
@@ -189,10 +235,10 @@ let NERDTreeIgnore = [
     \ '\logs$',
     \ '\.tern-project',
     \ '\.gitignore',
-    \ '\.python-version'
+    \ '\.python-version',
+    \ 'yarn.lock'
 \]
-
-let NERDTreeMinimalUI=1
+let g:NERDTreeMinimalUI=1
 
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -205,38 +251,143 @@ let g:indentLine_color_dark = 1
 let g:indentLine_showFirstIndentLevel = 2
 let g:indentLine_setColors = 0
 let g:indentLine_char_list = ['¦']
+let g:indentLine_setConceal = 2
+let g:indentLine_concealcursor = ""
 
-" Set configuration
+let g:coc_global_extensions = [
+  \ 'coc-java',
+  \ 'coc-json',
+  \ 'coc-python',
+  \ 'coc-snippets',
+  \ 'coc-yaml',
+  \ 'coc-highlight',
+  \ 'coc-docker',
+  \ 'coc-marketplace',
+  \ 'coc-go',
+  \ 'coc-xml',
+  \ 'coc-webpack',
+  \ 'coc-vimlsp',
+  \ 'coc-vetur',
+  \ 'coc-terminal',
+  \ 'coc-svelte',
+  \ 'coc-sql',
+  \ 'coc-smartf',
+  \ 'coc-sh',
+  \ 'coc-phpls',
+  \ 'coc-java-debug',
+  \ 'coc-prettier',
+  \ 'coc-html',
+  \ 'coc-flutter',
+  \ 'coc-css',
+  \ 'coc-angular',
+  \ 'coc-tsserver',
+  \ 'coc-solargraph'
+  \ ]
+
+
+" Theme
+let g:airline_theme='transparent'
 set termguicolors
 set background=dark
-
-" Set color scheme
+let ayucolor="mirage"
 colorscheme ayu
 
-" Keymaps configuration
-nnoremap <C-down> <C-W><C-J>
-nnoremap <C-up> <C-W><C-K>
-nnoremap <C-right> <C-W><C-L>
-nnoremap <C-left> <C-W><C-H>
-nnoremap <F2> :NERDTreeToggle<cr>
-nnoremap <buffer> <F9> :Run<cr>
 
 " Custom miscellaneous commands configuration
 command JSONFormat %!python -m json.tool
 command XMLFormat :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
 
-" Code navigation configuration
-command Definition execute "call CocActionAsync('jumpDefinition')"
-command Implementation execute "call CocActionAsync('jumpImplementation')"
-command Rename execute "call CocActionAsync('rename')"
-command Declaration execute "call CocActionAsync('jumpDeclaration')"
-command TypeDefinition execute "call CocActionAsync('jumpTypeDefinition')"
-command References execute "call CocActionAsync('jumpReferences')"
-command OpenLink execute "call CocActionAsync('openLink')"
-command CodeLens execute "call CocActionAsync('codeLensAction')"
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-" Run jest for current project
-command! -nargs=0 Jest :call  CocAction('runCommand', 'jest.projectTest')
-command! -nargs=0 JestCurrent :call  CocAction('runCommand', 'jest.fileTest', ['%'])
-nnoremap <leader>te :call CocAction('runCommand', 'jest.singleTest')<CR>
-command! JestInit :call CocAction('runCommand', 'jest.init')
+" Use K to show documentation in preview window.
+nnoremap <silent> dc :call <SID>show_documentation()<CR>
+
+" Remap for do codeAction of current line
+nmap ac (coc-codeaction)
+
+" Fix autofix problem of current line
+nmap qf (coc-fix-current)
+
+" Symbol renaming.
+nmap <silent>rn <Plug>(coc-rename)
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Direction navigate keysmaps
+nnoremap <C-down> <C-W><C-J>
+nnoremap <C-up> <C-W><C-K>
+nnoremap <C-right> <C-W><C-L>
+nnoremap <C-left> <C-W><C-H>
+
+" Sidebar toggle
+nnoremap <F2> :NERDTreeToggle<CR>
+
+" Tagbar toggle
+nnoremap <F10> :TagbarToggle<cr>
+
+" Terminal toggle
+nnoremap <F11> :CocCommand terminal.Toggle<cr>
+
+" press <esc> to cancel.
+nmap f <Plug>(coc-smartf-forward)
+nmap F <Plug>(coc-smartf-backward)
+nmap ; <Plug>(coc-smartf-repeat)
+nmap , <Plug>(coc-smartf-repeat-opposite)
+
+" Refactor symbol
+nmap rf <Plug>(coc-refactor)
+
+" Rename symbol
+nmap <leader>rn <Plug>(coc-rename)
+
+" Multiple cursors
+nmap <silent> <C-d> <Plug>(coc-cursors-word)*
+xmap <silent> <C-d> y/\V<C-r>=escape(@",'/\')<CR><CR>gN<Plug>(coc-cursors-range)gn
+
+" use normal command like `<leader>xi(`
+nmap <leader>x <Plug>(coc-cursors-operator)
+
+" Comments
+let g:comments_map_keys = 0
+
+" key-mappings for comment line in normal mode
+" key-mappings for range comment lines in visual <Shift-V> mode
+noremap  <silent> <C-L> :call CommentLine()<CR>
+vnoremap <silent> <C-L> :call RangeCommentLine()<CR>
+
+" key-mappings for un-comment line in normal mode
+" key-mappings for range un-comment lines in visual <Shift-V> mode
+noremap  <silent> <C-K> :call UnCommentLine()<CR>
+vnoremap <silent> <C-K> :call RangeUnCommentLine()<CR>
+
+" Debug
+noremap <silent> <C-c> :call vimspector#Continue()<CR>
+noremap <silent> <C-s> :call vimspector#Stop()<CR>
+noremap <silent> <C-b> :call vimspector#ToggleBreakpoint()<CR>
+noremap <silent> <C-y> :call vimspector#StepOver()<CR>
+noremap <silent> <C-u> :call vimspector#StepInto()<CR>
+noremap <silent> <C-i> :call vimspector#StepOut()<CR>
+noremap <silent> <F9> :call JavaStartDebug()<CR>
+
+" Functions
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+function! JavaStartDebugCallback(err, port)
+  execute "cexpr! 'Java debug started on port: " . a:port . "'"
+  call vimspector#LaunchWithSettings({ "configuration": "Java Attach", "AdapterPort": a:port })
+endfunction
+
+function JavaStartDebug()
+  call CocActionAsync('runCommand', 'vscode.java.startDebugSession', function('JavaStartDebugCallback'))
+endfunction

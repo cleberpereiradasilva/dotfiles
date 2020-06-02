@@ -1,48 +1,134 @@
 {
-  "coc.preferences.hoverTarget": "float",
-  "suggest.floatEnable": true,
-  "suggest.echodocSupport": true,
-  "suggest.maxPreviewWidth": 60,
-  "suggest.maxCompleteItemCount": 20,
-  "suggest.detailMaxLength": 10,
-  "suggest.removeDuplicateItems": true,
-  "java.import.gradle.enabled": true,
-  "java.import.maven.enabled": true,
-  "java.home": "/usr/lib/jvm/jdk1.8.0_231",
-  "java.configuration.updateBuildConfiguration": "automatic",
-  "java.format.enabled": true,
-  "java.signatureHelp.enabled": true,
-  "java.autobuild.enabled": true,
-  "java.foldingRange.enabled": true,
-  "java.format.comments.enabled": true,
-  "java.jdt.ls.vmargs": "-javaagent:/home/paulo/tools/lombok.jar -Xbootclasspath/a:/home/paulo/tools/lombok.jar",
-  "jest.watch": true,
-  "jest.watchman": true,
-  "jest.terminalPosition": "bottom",
-  "jest.forceExit": true,
-  "languageserver": {
-    "ccls": {
-        "command": "ccls",
-        "filetypes": [
-            "c",
-            "cc",
-            "cpp",
-            "objc",
-            "objcpp"
-        ],
-        "rootPatterns": [
-            ".ccls",
-            "compile_commands.json",
-            ".vim/",
-            ".git/",
-            ".hg/"
-        ],
-        "initializationOptions": {
-            "cache": {
-                "directory": "/tmp/ccls"
+    "coc.preferences.hoverTarget": "float",
+    "suggest.floatEnable": true,
+    "suggest.maxPreviewWidth": 40,
+    "list.maxHeight": 10,
+    "list.maxPreviewHeight": 10,
+    "suggest.labelMaxLength": 20,
+    "suggest.removeDuplicateItems": true,
+    "java.import.gradle.enabled": true,
+    "java.import.maven.enabled": true,
+    "java.home": "/usr/lib/jvm/java-11-oracle",
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.import.gradle.wrapper.enabled": true,
+    "java.autobuild.enabled": true,
+    "javascript.suggest.autoImports": true,
+    "java.format.enabled": true,
+    "java.completion.importOrder": true,
+    "java.referencesCodeLens.enabled": true,
+    "java.signatureHelp.enabled": true,
+    "java.foldingRange.enabled": true,
+    "java.format.comments.enabled": true,
+    "java.completion.guessMethodArguments": true,
+    "java.format.onType.enabled": true,
+    "java.codeGeneration.useBlocks": true,
+    "coc.preferences.rootPatterns": [
+        ".git",
+        ".env",
+        "queroemprestar",
+        "dashboard",
+        "src"
+    ],
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "java.maven.downloadSources": true,
+    "java.jdt.ls.vmargs": "-javaagent:/home/paulo/tools/lombok.jar -Xbootclasspath/a:/home/paulo/tools/lombok.jar",
+    "python.autoUpdateLanguageServer": true,
+    "python.linting.enabled": true,
+    "python.jediEnabled": false,
+    "languageserver": {
+        "golang": {
+            "command": "gopls",
+            "disableWorkspaceFolders": true,
+            "filetypes": ["go"]
+        },
+        "ccls": {
+            "command": "ccls",
+            "filetypes": [
+                "c",
+                "cc",
+                "cpp",
+                "objc",
+                "objcpp"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        },
+        "python": {
+            "command": "python",
+            "args": [
+                "-mpyls",
+                "-vv",
+                "--log-file",
+                "/tmp/lsp_python.log"
+            ],
+            "trace.server": "verbose",
+            "filetypes": [
+                "python"
+            ],
+            "settings": {
+                "pyls": {
+                    "enable": true,
+                    "trace": {
+                        "server": "verbose"
+                    },
+                    "commandPath": "",
+                    "configurationSources": [
+                        "pycodestyle"
+                    ],
+                    "plugins": {
+                        "jedi_completion": {
+                            "enabled": false
+                        },
+                        "jedi_hover": {
+                            "enabled": false
+                        },
+                        "jedi_references": {
+                            "enabled": false
+                        },
+                        "jedi_signature_help": {
+                            "enabled": false
+                        },
+                        "jedi_symbols": {
+                            "enabled": false,
+                            "all_scopes": false
+                        },
+                        "mccabe": {
+                            "enabled": false,
+                            "threshold": 15
+                        },
+                        "preload": {
+                            "enabled": true
+                        },
+                        "pycodestyle": {
+                            "enabled": true
+                        },
+                        "pydocstyle": {
+                            "enabled": true,
+                            "match": "(?!test_).*\\.py",
+                            "matchDir": "[^\\.].*"
+                        },
+                        "pyflakes": {
+                            "enabled": true
+                        },
+                        "rope_completion": {
+                            "enabled": false
+                        },
+                        "yapf": {
+                            "enabled": false
+                        }
+                    }
+                }
             }
         }
     }
-  }
 }
-
