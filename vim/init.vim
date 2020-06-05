@@ -130,7 +130,6 @@ set shortmess=aFc
 call plug#begin('~/.vim/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'mhinz/vim-startify'
-  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   Plug 'Yggdroot/indentLine'
   Plug 'vim-airline/vim-airline'
   Plug 'jiangmiao/auto-pairs'
@@ -216,30 +215,6 @@ let g:gitgutter_highlight_linenrs = 1
 
 let g:gist_use_password_in_gitconfig = 1
 
-" NERDTree configurations.
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '~'
-let g:NERDTreeShowHidden = 0
-let g:NERDTreeChDirMode = 2
-let g:NERDTreeIgnore = [
-    \ '\~$',
-    \ '\.pyc$',
-    \ '^\.DS_Store$',
-    \ '^node_modules$',
-    \ '^.ropeproject$',
-    \ '^__pycache__$',
-    \ '\.git$',
-    \ '\.env$',
-    \ '\.vscode$',
-    \ '\.cache$',
-    \ '\logs$',
-    \ '\.tern-project',
-    \ '\.gitignore',
-    \ '\.python-version',
-    \ 'yarn.lock'
-\]
-let g:NERDTreeMinimalUI=1
-
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
@@ -281,9 +256,9 @@ let g:coc_global_extensions = [
   \ 'coc-css',
   \ 'coc-angular',
   \ 'coc-tsserver',
-  \ 'coc-solargraph'
+  \ 'coc-solargraph',
+  \ 'coc-explorer'
   \ ]
-
 
 " Theme
 let g:airline_theme='transparent'
@@ -291,7 +266,6 @@ set termguicolors
 set background=dark
 let ayucolor="mirage"
 colorscheme ayu
-
 
 " Custom miscellaneous commands configuration
 command JSONFormat %!python -m json.tool
@@ -325,7 +299,30 @@ nnoremap <C-right> <C-W><C-L>
 nnoremap <C-left> <C-W><C-H>
 
 " Sidebar toggle
-nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <F2> :CocCommand explorer --width 30<CR>
+
+let g:coc_explorer_global_presets = {
+\   '.vim': {
+\      'root-uri': '~/.vim',
+\   },
+\   'floating': {
+\      'position': 'floating',
+\   },
+\   'floatingLeftside': {
+\      'position': 'floating',
+\      'floating-position': 'left-center',
+\      'floating-width': 10,
+\   },
+\   'floatingRightside': {
+\      'position': 'floating',
+\      'floating-position': 'left-center',
+\      'floating-width': 10,
+\   },
+\   'simplify': {
+\     'file.child.template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+\   }
+\ }
+
 
 " Tagbar toggle
 nnoremap <F10> :TagbarToggle<cr>

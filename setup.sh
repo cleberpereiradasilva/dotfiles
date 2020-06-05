@@ -41,7 +41,8 @@ sudo apt -y install libdbus-glib-1-dev \
 										xclip \
 										xsel \
 										neofetch \
-										silversearcher-ag
+										silversearcher-ag \
+                    ctags
 
 # .XDEFAULTS
 cp .Xdefaults ~/.Xdefaults
