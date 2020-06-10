@@ -174,10 +174,10 @@ bar {
                 background #212733
                 statusline #ffffff
 
-                focused_workspace #ffffff #000000 #ffffff
-                active_workspace #222222 #000000 #222222
-                inactive_workspace #888888 #000000 #888888
-                urgent_workspace #ffffff #000000 #ffffff
+                focused_workspace #ffffff #212733 #ffffff
+                active_workspace #333333 #212733 #cccccc
+                inactive_workspace #888888 #212733 #888888
+                urgent_workspace #ffffff #212733 #ffffff
         }
 }
 
@@ -197,4 +197,5 @@ exec_always --no-startup-id xrdb -load /home/paulo/.Xdefaults
 exec_always --no-startup-id setxkbmap -model abnt2 -layout br -variant abnt2
 exec_always --no-startup-id /home/paulo/.screenlayout/default.sh
 exec_always --no-startup-id dunst -config /home/paulo/.dunstrc
-exec_always --no-startup-id feh --bg-scale /home/paulo/wallpaper/2.jpg
+exec_always --no-startup-id feh --bg-scale /home/paulo/wallpaper/4.jpg
+exec --no-startup-id dunst -config ~/.dunstrc

@@ -96,6 +96,18 @@ au FileType java set shiftwidth=4
 au FileType java set softtabstop=4
 au FileType java set tabstop=4
 
+""" CPP
+au FileType cpp set expandtab
+au FileType cpp set shiftwidth=4
+au FileType cpp set softtabstop=4
+au FileType cpp set tabstop=4
+
+""" C
+au FileType c set expandtab
+au FileType c set shiftwidth=4
+au FileType c set softtabstop=4
+au FileType c set tabstop=4
+
 """ Set configurations
 set laststatus=0
 set autoindent
@@ -140,6 +152,16 @@ call plug#begin('~/.vim/plugged')
   Plug 'chazmcgarvey/vim-mermaid'
   Plug 'puremourning/vimspector'
   Plug 'sbdchd/neoformat'
+
+  " Arduino
+  ":ArduinoChooseBoard - Select the type of board from a list.
+  ":ArduinoChooseProgrammer - Select the programmer from a list.
+  ":ArduinoChoosePort - Select the serial port from a list.
+  ":ArduinoVerify - Build the sketch.
+  ":ArduinoUpload - Build and upload the sketch.
+  ":ArduinoSerial - Connect to the board for debugging over a serial port.
+  ":ArduinoUploadAndSerial - Build, upload, and connect for debugging.
+  Plug 'stevearc/vim-arduino'
 
   " :DogeGenerate
   Plug 'kkoomen/vim-doge'
@@ -228,6 +250,7 @@ let g:indentLine_setColors = 0
 let g:indentLine_char_list = ['¦']
 let g:indentLine_setConceal = 2
 let g:indentLine_concealcursor = ""
+let g:arduino_dir = "~/tools/arduino"
 
 let g:coc_global_extensions = [
   \ 'coc-java',
@@ -257,7 +280,8 @@ let g:coc_global_extensions = [
   \ 'coc-angular',
   \ 'coc-tsserver',
   \ 'coc-solargraph',
-  \ 'coc-explorer'
+  \ 'coc-explorer',
+  \ 'coc-clangd'
   \ ]
 
 " Theme

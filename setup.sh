@@ -42,7 +42,13 @@ sudo apt -y install libdbus-glib-1-dev \
 										xsel \
 										neofetch \
 										silversearcher-ag \
-                    ctags
+                    ctags \
+										tor \
+										proxychains \
+										dunst \
+										ruby-dev \
+										ruby \
+										ruby-bundler
 
 # .XDEFAULTS
 cp .Xdefaults ~/.Xdefaults

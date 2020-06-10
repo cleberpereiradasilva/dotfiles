@@ -14,7 +14,6 @@
     "java.autobuild.enabled": true,
     "javascript.suggest.autoImports": true,
     "java.format.enabled": true,
-    "java.completion.importOrder": true,
     "java.referencesCodeLens.enabled": true,
     "java.signatureHelp.enabled": true,
     "java.foldingRange.enabled": true,
@@ -44,27 +43,20 @@
                 "go"
             ]
         },
-        "ccls": {
-            "command": "ccls",
+        "clangd": {
+            "command": "clangd",
+            "rootPatterns": [
+                "compile_flags.txt",
+                "compile_commands.json"
+            ],
             "filetypes": [
                 "c",
                 "cc",
                 "cpp",
+                "c++",
                 "objc",
                 "objcpp"
-            ],
-            "rootPatterns": [
-                ".ccls",
-                "compile_commands.json",
-                ".vim/",
-                ".git/",
-                ".hg/"
-            ],
-            "initializationOptions": {
-                "cache": {
-                    "directory": "/tmp/ccls"
-                }
-            }
+            ]
         },
         "python": {
             "command": "python",
