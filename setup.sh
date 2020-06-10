@@ -48,10 +48,15 @@ sudo apt -y install libdbus-glib-1-dev \
 										dunst \
 										ruby-dev \
 										ruby \
-										ruby-bundler
+										ruby-bundler \
+										clangd \
+										arandr \
+										pavucontrol
+
 
 # .XDEFAULTS
 cp .Xdefaults ~/.Xdefaults
+cp .dunstrc ~
 
 mkdir -p ~/.config/kitty
 cp kitty.conf ~/.config/kitty/kitty.conf
@@ -70,7 +75,7 @@ eval "$(pyenv virtualenv-init -)"
 pyenv install 3.7.7
 pyenv global 3.7.7
 
-pip install neovim pylint flake8 pylama pydocstyle prospector mypy pyls-mypy yapf black
+pip install neovim pylint flake8 pylama pydocstyle prospector mypy pyls-mypy yapf black platformio
 
 # NODEJS
 echo "\n" >> ~/.bashrc
@@ -86,8 +91,13 @@ export NVM_DIR="$HOME/.nvm"
 # GOLANG
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 [[ -s "/home/paulo/.gvm/scripts/gvm" ]] && source "/home/paulo/.gvm/scripts/gvm"
-gvm install go1.4 -B
-gvm use go1.4
+
+gvm install go1.14.4 -B
+gvm use go1.14.4
+
+export PATH=$PATH:$(go env GOPATH)/bin
+export GOPATH=$(go env GOPATH)
+export GOROOT=$(go env GOROOT)
 
 # BUMBLEBEE-STATUS
 pip install requests
@@ -120,4 +130,9 @@ cp -rf ./wallpaper ~/
 # JAVA
 curl -s "https://get.sdkman.io" | bash
 
+export SDKMAN_DIR="/home/paulo/.sdkman"
+[[ -s "/home/paulo/.sdkman/bin/sdkman-init.sh" ]] && source "/home/paulo/.sdkman/bin/sdkman-init.sh"
 
+sdk install maven
+sdk install springboot
+sdk install kotlin
