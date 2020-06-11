@@ -2,57 +2,7 @@
 
 echo "Installing dependencies os..."
 sudo apt-get update
-sudo apt -y install libdbus-glib-1-dev \
-                    libdbus-1-dev \
-                    make \
-                    build-essential \
-                    libssl-dev \
-                    zlib1g-dev \
-                    libbz2-dev \
-                    libreadline-dev \
-                    libsqlite3-dev \
-                    wget \
-                    curl \
-                    llvm \
-                    libncurses5-dev \
-                    xz-utils \
-                    tk-dev \
-                    libxml2-dev \
-                    libxmlsec1-dev \
-                    libffi-dev \
-                    liblzma-dev \
-                    i3 \
-                    i3-wm \
-                    i3-wm-dbg \
-                    i3blocks \
-                    i3lock \
-                    i3lock-fancy \
-                    i3pystatus \
-                    i3status \
-                    rofi \
-										feh \
-										clangd \
-										bison \
-										docker.io \
-										docker-compose \
-										thunar \
-										tmate \ 
-										clipboard \
-										xclip \
-										xsel \
-										neofetch \
-										silversearcher-ag \
-                    ctags \
-										tor \
-										proxychains \
-										dunst \
-										ruby-dev \
-										ruby \
-										ruby-bundler \
-										clangd \
-										arandr \
-										pavucontrol
-
+sudo apt -y install libdbus-glib-1-dev libdbus-1-dev make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev i3 i3-wm i3-wm-dbg i3blocks i3lock i3lock-fancy i3pystatus i3status rofi feh clangd bison docker.io docker-compose thunar tmate  xclip xsel neofetch silversearcher-ag ctags tor proxychains dunst ruby-dev ruby ruby-bundler clangd arandr pavucontrol
 
 # .XDEFAULTS
 cp .Xdefaults ~/.Xdefaults
@@ -78,8 +28,8 @@ pyenv global 3.7.7
 pip install neovim pylint flake8 pylama pydocstyle prospector mypy pyls-mypy yapf black platformio
 
 # NODEJS
-echo "\n" >> ~/.bashrc
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
 nvm install v12.18.0
 nvm use v12.18.0
 npm install neovim -g
