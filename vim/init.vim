@@ -141,17 +141,30 @@ set shortmess=aFc
 " Plugins configurations
 call plug#begin('~/.vim/plugged')
   Plug 'sheerun/vim-polyglot'
+  
   Plug 'mhinz/vim-startify'
+  
   Plug 'Yggdroot/indentLine'
+
   Plug 'vim-airline/vim-airline'
+
   Plug 'jiangmiao/auto-pairs'
+
   Plug 'airblade/vim-gitgutter'
+
   Plug 'mattn/webapi-vim'
+
   Plug 'tpope/vim-surround'
+
   Plug 'juliosueiras/vim-terraform-completion'
+
   Plug 'chazmcgarvey/vim-mermaid'
+
   Plug 'puremourning/vimspector'
+
   Plug 'sbdchd/neoformat'
+
+  Plug 'hardcoreplayers/dashboard-nvim'
 
   " Arduino
   ":ArduinoChooseBoard - Select the type of board from a list.
@@ -199,7 +212,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'sudar/comments.vim'
 
   " :MarkdownPreview github
-  Plug 'MikeCoder/markdown-preview.vim'
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
   " :Far foo bar <**/*.py> -> Replace
   " :Fardo -> apply

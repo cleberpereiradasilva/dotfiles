@@ -2,6 +2,7 @@
     "coc.preferences.hoverTarget": "float",
     "suggest.floatEnable": true,
     "suggest.maxPreviewWidth": 40,
+    "suggest.enablePreview": true,
     "list.maxHeight": 10,
     "list.maxPreviewHeight": 10,
     "suggest.labelMaxLength": 20,
@@ -27,7 +28,9 @@
         ".env",
         "queroemprestar",
         "dashboard",
-        "src"
+        "src",
+        "django_country_filter",
+        "tests"
     ],
     "java.errors.incompleteClasspath.severity": "ignore",
     "java.maven.downloadSources": true,

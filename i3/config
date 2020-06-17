@@ -31,8 +31,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec /bin/kitty
-bindsym $mod+Shift+t exec /bin/kitty -o font_size=11.3
-bindsym $mod+Shift+o exec /bin/kitty -o font_size=18.1
+bindsym $mod+t exec /bin/kitty -o font_size=21.3
 
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+shift+w exec --no-startup-id rofi -show window
@@ -166,6 +165,8 @@ bar {
         position bottom
         tray_output none
         mode dock
+
+        output primary
 
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
         font pango:Jetbrains Mono Medium 11.5
