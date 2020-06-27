@@ -129,7 +129,7 @@ set ruler
 set formatoptions=tcqron
 set softtabstop=2
 set tabstop=2
-set textwidth=80
+set textwidth=100
 set title
 set updatetime=100
 set hidden

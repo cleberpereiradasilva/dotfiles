@@ -9,7 +9,7 @@
     "suggest.removeDuplicateItems": true,
     "java.import.gradle.enabled": true,
     "java.import.maven.enabled": true,
-    "java.home": "/usr/lib/jvm/jdk-11.0.7",
+    "java.home": "/usr/lib/jvm/jdk1.8.0_251",
     "java.configuration.updateBuildConfiguration": "automatic",
     "java.import.gradle.wrapper.enabled": true,
     "java.autobuild.enabled": true,

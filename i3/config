@@ -166,8 +166,6 @@ bar {
         tray_output none
         mode dock
 
-        output primary
-
         font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
         font pango:Jetbrains Mono Medium 11.5
 
@@ -200,3 +198,4 @@ exec_always --no-startup-id /home/paulo/.screenlayout/default.sh
 exec_always --no-startup-id dunst -config /home/paulo/.dunstrc
 exec_always --no-startup-id feh --bg-scale /home/paulo/wallpaper/4.jpg
 exec --no-startup-id dunst -config ~/.dunstrc
+exec --no-startup-id /usr/sbin/alsactl restore
