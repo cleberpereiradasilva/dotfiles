@@ -1,4 +1,4 @@
-" Extensions configurations
+" Extensios configurations
 
 """ Bash
 au FileType sh set noexpandtab
@@ -164,7 +164,7 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'sbdchd/neoformat'
 
-  Plug 'hardcoreplayers/dashboard-nvim'
+  Plug 'tpope/vim-dadbod' 
 
   " Arduino
   ":ArduinoChooseBoard - Select the type of board from a list.
@@ -230,6 +230,8 @@ call plug#begin('~/.vim/plugged')
   " Themes
   Plug 'vim-airline/vim-airline-themes'
   Plug 'ayu-theme/ayu-vim'
+  Plug 'junegunn/seoul256.vim'
+  Plug 'chuling/equinusocio-material.vim'
 call plug#end()
 
 " Mouse configuration.
