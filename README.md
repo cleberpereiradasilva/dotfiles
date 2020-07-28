@@ -14,6 +14,7 @@ Arquivos de configurações do meu ambiente de trabalho
 # Como Instalar
 	* Instalar o gerenciador de plugins 	`https://github.com/junegunn/vim-plug`
 	* Copiar `.vimrc` para sua home `~/`
+  * Copiar a pasta `.vim` para sua home `~/`
 	* Abrir o *vim*  e dar o comando `:PlugInstall`
 
 
@@ -23,7 +24,6 @@ Arquivos de configurações do meu ambiente de trabalho
 	cd ~/.local/share/fonts 
 	curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf"
 	```
-
 
 # Como Usar
 	- CTRL+A: Abrir e fechar o NERDTree
