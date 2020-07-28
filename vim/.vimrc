@@ -1,90 +1,81 @@
-" Specify a directory for plugins
-call plug#begin('~/.vim/plugged')
+syntax on
+filetype plugin indent on 
 
-Plug 'vim-airline/vim-airline'
-Plug 'mhinz/vim-startify'
-Plug 'franbach/miramare'
-Plug 'sheerun/vim-polyglot'
-Plug 'ryanoasis/vim-devicons'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+set number
+set mouse=a
+set numberwidth=1
+set clipboard=unnamed
+set tabstop=2
+set shiftwidth=4
+set expandtab
+set showcmd
+set cursorline
+set encoding=utf-8
+set showmatch
+set relativenumber
+set laststatus=2
+set noshowmode
+set backspace=indent,eol,start
+set scrolloff=8
+
+call plug#begin("~/.vim/plugged")
+
+" Theme
+Plug 'rainglow/vim'
+
+" IDE
 Plug 'scrooloose/nerdtree'
-Plug 'tsony-tsonev/nerdtree-git-plugin'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
-Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
-Plug 'scrooloose/nerdcommenter'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'morhetz/gruvbox'
-Plug 'govim/govim'
-Plug 'mileszs/ack.vim'
-Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+Plug 'ryanoasis/vim-devicons'
+Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 
-" Initialize plugin system
 call plug#end()
 
-inoremap jk <ESC>
+" load colors config
+let $EARTH= $HOME . '/.vim/themes/earthsong.vim'
+let $KIWI = $HOME . '/.vim/themes/kiwi.vim'
+source $KIWI
+
+" NERDTree
 nmap <C-A> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
-" open NERDTree automatically
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree
-
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-
+let NERDTreeIgnore=['\.swp$','\.mvn$','\.settings$', '\.m2$', '\.DS_Store$', '\.git$'] 
 let g:NERDTreeGitStatusWithFlags = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:NERDTreeGitStatusNodeColorization = 1
 let g:NERDTreeShowHidden=1
-"let g:NERDTreeColorMapCustom = {
-"    \ "Staged"    : "#0ee375",  
-"    \ "Modified"  : "#d9bf91",  
-"    \ "Renamed"   : "#51C9FC",  
-"    \ "Untracked" : "#FCE77C",  
-"    \ "Unmerged"  : "#FC51E6",  
-"    \ "Dirty"     : "#FFBD61",  
-"    \ "Clean"     : "#87939A",   
-"    \ "Ignored"   : "#808080"   
-"    \ }                         
-
-
+let g:NERDTreeColorMapCustom = {
+    \ "Staged"    : "#0ee375",  
+    \ "Modified"  : "#d9bf91",  
+    \ "Renamed"   : "#51C9FC",  
+    \ "Untracked" : "#FCE77C",  
+    \ "Unmerged"  : "#FC51E6",  
+    \ "Dirty"     : "#FFBD61",  
+    \ "Clean"     : "#87939A",   
+    \ "Ignored"   : "#808080"   
+    \ }                         
 
 let consUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:DevIconsEnableFolderExtensionPatternMatching = 1
-
 let g:DevIconsDefaultFolderOpenSymbol=''
 let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol=''
-
 let g:prettier#quickfix_enabled = 0
 let g:prettier#quickfix_auto_focus = 0
-
-
-
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:DevIconsEnableFolderExtensionPatternMatching = 1
-
 let g:DevIconsDefaultFolderOpenSymbol=''
 let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol=''
-
-" Custom icons for file extensions
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {} " needed
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['js'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['ts'] = 'ﯤ'
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['json'] = 'ﬥ'
-
 let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols = {} " needed
 let g:WebDevIconsUnicodeDecorateFileNodesPatternSymbols['.test.ts'] = 'ﭧ'
-
-" Custom icons for specific filenames
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {} " needed
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['ormconfig.js'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.env'] = 'ﭩ'
@@ -92,54 +83,8 @@ let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.editorconfig'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.npmrc'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['src'] = ''
 
+"==========================================================================
 
-" prettier command for coc
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-" run prettier on save
-let g:prettier#autoformat = 1
-"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-
-
-" ctrlp
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-" j/k will move virtual lines (lines that wrap)
-noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
-noremap <C-N> :bn<CR>
-noremap <PageUp> :vertical res +10<CR>
-noremap <PageDown> :vertical res -10<CR>
-set relativenumber
-set showcmd
-let g:airline_powerline_fonts = 1
-set guifont=DroidSansMono_Nerd_Font:11
-
-set smarttab
-set cindent
-set tabstop=2
-set shiftwidth=2
-" always uses spaces instead of tab characters
-"set expandtab
-
-" colorscheme gruvbox
-
-" sync open file with NERDTree
-" " Check if NERDTree is open or active
-function! IsNERDTreeOpen()        
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
-
-" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
-" file, and we're not in vimdiff
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
-
-" Highlight currently open buffer in NERDTree
-autocmd BufEnter * call SyncTree()
 
 " coc config
 let g:coc_global_extensions = [
@@ -149,7 +94,9 @@ let g:coc_global_extensions = [
   \ 'coc-eslint', 
   \ 'coc-prettier', 
   \ 'coc-json', 
+  \ 'coc-java', 
   \ ]
+
 " from readme
 " if hidden is not set, TextEdit might fail.
 set hidden " Some servers have issues with backup files, see #649 set nobackup set nowritebackup " Better display for messages set cmdheight=2 " You will have bad experience for diagnostic messages when it's default 4000.
@@ -272,4 +219,43 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 let &t_TI = ""
-let &t_TE = ""
+
+
+" sync open file with NERDTree
+" " Check if NERDTree is open or active
+function! IsNERDTreeOpen()        
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+" Highlight currently open buffer in NERDTree
+autocmd BufEnter * call SyncTree()
+" ============================================================================
+
+
+
+" prettier command for coc
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" run prettier on save
+let g:prettier#autoformat = 1
+
+
+noremap <C-N> :bn<CR>
+noremap <PageUp> :vertical res +10<CR>
+noremap <PageDown> :vertical res -10<CR>
+" open NERDTree automatically
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree
+
+
+
+
+

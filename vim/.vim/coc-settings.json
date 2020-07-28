@@ -1,0 +1,11 @@
+{
+	"java.jdt.ls.vmargs": "-javaagent:/home/noct/Trabalho/.tools/lombok.jar -Xbootclasspath/a:/home/noct/Trabalho/.tools/lombok.jar",
+	"languageserver": {
+		"go": {
+			"command": "gopls",
+			"rootPatterns": ["go.mod"],
+			"trace.server": "verbose",
+			"filetypes": ["go"]
+		}
+	}
+}
