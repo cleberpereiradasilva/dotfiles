@@ -61,6 +61,11 @@ nmap <C-X> :qa<CR>
 nmap <C-A> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
+nmap <C-w> <C-w>w
+"nmap <C-j> <C-w>j
+"nmap <C-k> <C-w>k
+"nmap <C-l> <C-w>l
+
 
 let NERDTreeIgnore=['\.swp$','\.mvn$','\.settings$', '\.m2$', '\.DS_Store$', '\.git$'] 
 let g:NERDTreeGitStatusWithFlags = 1

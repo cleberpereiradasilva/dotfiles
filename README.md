@@ -29,7 +29,7 @@ Arquivos de configurações do meu ambiente de trabalho
 # Como Usar
 	- CTRL+A: Abrir e fechar o NERDTree
 	- PageUp/PageDown: Aumentar ou diminuir a janela selecionada
-	- CTRL+WW: Mudar entre janelas(esquerda e direita)		
+	- CTRL+W: Mudar entre janelas(esquerda e direita)		
 	- TAB: Navegar entre os arquivos que estão aberto
 	- CTRL+P: Buscar por arquivos por nome
   - CTRL+X: Fechar todos os arquivos abertos(:qa)
