@@ -12,8 +12,8 @@ Arquivos de configurações do meu ambiente de trabalho
 
 
 # Como Instalar
-	* Instalar o gerenciador de plugins 	`https://github.com/junegunn/vim-plug`
-	* Copiar `.vimrc` para sua home `~/`
+  * Instalar o gerenciador de plugins 	`https://github.com/junegunn/vim-plug`
+  * Copiar `.vimrc` para sua home `~/`
   * Copiar a pasta `.vim` para sua home `~/`
 	* Abrir o *vim*  e dar o comando `:PlugInstall`
 
