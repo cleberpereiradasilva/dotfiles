@@ -14,6 +14,7 @@ Arquivos de configurações do meu ambiente de trabalho
 # Como Instalar
   * Instalar o gerenciador de plugins 	`https://github.com/junegunn/vim-plug`
   * Copiar `.vimrc` para sua home `~/`
+  * Copiar `.tmux.conf` para sua home `~/` caso esteja usando o tmux
   * Copiar a pasta `.vim` para sua home `~/`
   * Abrir o *vim*  e dar o comando `:PlugInstall`
 
@@ -29,8 +30,9 @@ Arquivos de configurações do meu ambiente de trabalho
 	- CTRL+A: Abrir e fechar o NERDTree
 	- PageUp/PageDown: Aumentar ou diminuir a janela selecionada
 	- CTRL+WW: Mudar entre janelas(esquerda e direita)		
-	- CTRL+N: Navegar entre os arquivos que estão aberto
+	- TAB: Navegar entre os arquivos que estão aberto
 	- CTRL+P: Buscar por arquivos por nome
+  - CTRL+X: Fechar todos os arquivos abertos(:qa)
 	- continue....
 
 

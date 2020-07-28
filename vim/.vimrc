@@ -16,12 +16,23 @@ set relativenumber
 set laststatus=2
 set noshowmode
 set backspace=indent,eol,start
-set scrolloff=8
+set scrolloff=20
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+set fillchars+=vert:\ 
+
 
 call plug#begin("~/.vim/plugged")
 
-" Theme
+" Graphical
+Plug 'morhetz/gruvbox'
 Plug 'rainglow/vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'bling/vim-bufferline'
+"Plug 'edkolev/tmuxline.vim'
+
 
 " IDE
 Plug 'scrooloose/nerdtree'
@@ -35,7 +46,16 @@ call plug#end()
 " load colors config
 let $EARTH= $HOME . '/.vim/themes/earthsong.vim'
 let $KIWI = $HOME . '/.vim/themes/kiwi.vim'
+let g:airline_theme='simple'
 source $KIWI
+
+" =========== MY KEY MAPS ==================
+" CLOSE ALL
+nmap <C-X> :qa<CR>
+
+" ==========================================
+
+
 
 " NERDTree
 nmap <C-A> :NERDTreeToggle<CR>
@@ -248,7 +268,8 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:prettier#autoformat = 1
 
 
-noremap <C-N> :bn<CR>
+
+noremap <TAB> :bn<CR>
 noremap <PageUp> :vertical res +10<CR>
 noremap <PageDown> :vertical res -10<CR>
 " open NERDTree automatically
