@@ -32,6 +32,16 @@ Arquivos de configurações do meu ambiente de trabalho
 	- CTRL+W: Mudar entre janelas(esquerda e direita)		
 	- TAB: Navegar entre os arquivos que estão aberto
 	- CTRL+P: Buscar por arquivos por nome
+	- `gd`: para ir para a definição
+	- `gf`: para abrir a definição
+	- `go`: para voltar
+	-  `A`: inserir no finalda linha
+	- ´o`: inserir na linha de baixo
+	- `O`: inserir na linha de cima
+	- `x`: remove caractér da frente
+	- `X`: remove caractér anterior
+
+
   - No NERDTree abrir menu com a letra `m`
   - CTRL+X: Fechar todos os arquivos abertos(:qa)
 	- continue....
