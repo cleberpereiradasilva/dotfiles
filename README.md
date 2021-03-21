@@ -35,11 +35,18 @@ Arquivos de configurações do meu ambiente de trabalho
 	- `gd`: para ir para a definição
 	- `gf`: para abrir a definição
 	- `go`: para voltar
-	-  `A`: inserir no finalda linha
+	- `A`: inserir no finalda linha
 	- ´o`: inserir na linha de baixo
 	- `O`: inserir na linha de cima
 	- `x`: remove caractér da frente
 	- `X`: remove caractér anterior
+	- `d$`: remover conteúdo da linha sem remover a linha
+	- `D`: remover do cursor até o final da linha
+	- `dw`: remove próxima palavra
+	- `dB`: remove a palavra anterior 
+	- `u`: desfazer
+	- `ctr+r`: refazer
+	
 
 
   - No NERDTree abrir menu com a letra `m`
