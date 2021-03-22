@@ -58,6 +58,7 @@ Arquivos de configurações do meu ambiente de trabalho
 	- `%`: vai para o `{, ) ou ]` correspondente
 	- `%s/antigo/novo/g`: substituir em todo o arquivo
 	- `v`: modo visual para poder copiar textos
+	- `bw`: fechar o buffer
 	
 
 
