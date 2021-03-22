@@ -44,9 +44,22 @@ Arquivos de configurações do meu ambiente de trabalho
 	- `D`: remover do cursor até o final da linha
 	- `dw`: remove próxima palavra
 	- `dB`: remove a palavra anterior 
+	- `cw`: remover para alterar/editar o resto da palavra
+	- `ciw`: remover para alterar/editar o toda a palavra
 	- `u`: desfazer
 	- `ctr+r`: refazer
+	- `dd`: recortar linha
+	- `p`: colar linha abaixo
+	- `P`: colar linha acima
 	
+
+
+  - Repetições
+  	- `dnw`: onde `n` é um número de palavras posteiores para remover
+  	- `dnB`: onde `n` é um número de palavras anteriores para remover
+  	- `2w`: duas vezes o `w`
+  	- `2B`: duas vezes o `B`
+
 
 
   - No NERDTree abrir menu com a letra `m`
