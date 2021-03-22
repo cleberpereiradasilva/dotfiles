@@ -49,8 +49,15 @@ Arquivos de configurações do meu ambiente de trabalho
 	- `u`: desfazer
 	- `ctr+r`: refazer
 	- `dd`: recortar linha
+	- `y`: copiar linha/texto
 	- `p`: colar linha abaixo
 	- `P`: colar linha acima
+	- `gg`: vai para a primeira linha do arquivo
+	- `G`: vai para a última linha do arquivo
+	- `/palavra`: buscar palavra
+	- `%`: vai para o `{, ) ou ]` correspondente
+	- `%s/antigo/novo/g`: substituir em todo o arquivo
+	- `v`: modo visual para poder copiar textos
 	
 
 
