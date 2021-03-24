@@ -67,6 +67,7 @@ Arquivos de configurações do meu ambiente de trabalho
   	- `dnB`: onde `n` é um número de palavras anteriores para remover
   	- `2w`: duas vezes o `w`
   	- `2B`: duas vezes o `B`
+  	- `nyy`: copiar n linhas abaixo do cursor
 
 
 
